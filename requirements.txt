@@ -1,5 +1,9 @@
 fastapi
-uvicorn[standard]
+uvicorn
 pydantic
 python-dotenv
-# Add your LLM library here, e.g., openai, transformers
+langchain
+openai
+faiss-cpu
+httpx
+lc_ainetwork

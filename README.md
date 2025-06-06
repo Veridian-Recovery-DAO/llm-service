@@ -82,6 +82,49 @@ Send a POST request to the `/ask-llm` endpoint with the following JSON payload:
 ```
 
 --- 
+# LangChain AINetwork RAG Service
+
+## Overview
+This project provides a FastAPI service for Retrieval-Augmented Generation (RAG) using LangChain, with AINetwork tool integration. It demonstrates RAG, chat history QA, tool calling, streaming, and multimodal prompts.
+
+## Setup
+
+1. Clone the repository and navigate to the folder:
+    ```powershell
+    git clone https://github.com/Veridian-Recovery-DAO/llm-service.git
+    cd llm-service
+    ```
+2. Create a virtual environment and activate it:
+    ```powershell
+    python -m venv venv
+    .\venv\Scripts\activate
+    ```
+3. Install dependencies:
+    ```powershell
+    pip install -r requirements.txt
+    ```
+4. Copy `.env.example` to `.env` and fill in your API keys.
+
+## Running the API
+
+```powershell
+uvicorn app.main:app --reload --port 8000
+```
+
+## Endpoints
+- `/rag` — Standard RAG response
+- `/chat-history-qa` — QA with chat history
+- `/tool-calling` — Tool calling with AINetwork
+- `/streaming` — Streaming response (scaffold)
+- `/multimodal` — Multimodal prompt (scaffold)
+
+## References
+- [LangChain RAG Tutorial](https://python.langchain.com/docs/tutorials/rag/)
+- [LangChain AINetwork Integration](https://python.langchain.com/docs/integrations/tools/ainetwork/)
+- [LangChain Streaming](https://python.langchain.com/docs/how_to/streaming/)
+- [LangChain Multimodal](https://python.langchain.com/docs/how_to/multimodal_prompts/)
+
+--- 
 ### 📚 Disclaimer
 This service is for informational and educational purposes only. It is not a substitute for professional medical advice, diagnosis, therapy, or crisis intervention. If you are in crisis, please contact a local emergency number or a crisis hotline immediately.
 
