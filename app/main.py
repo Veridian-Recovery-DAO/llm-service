@@ -35,22 +35,6 @@ class LLMResponse(BaseModel):
     query_received: str
 
 
-@app.post("/ask-llm", response_model=LLMResponse)
-async def ask_llm(request_body: LLMQuery):
-    """
-    Accepts a user query and returns a response from the LLM.
-    """
-    try:
-        response_text = get_llm_response(request_body.query, request_body.userId)
-        return LLMResponse(answer=response_text, query_received=request_body.query)
-    except Exception as e:
-        print(f"Error in /ask-llm endpoint: {e}")  # Log the actual error server-side
-        raise HTTPException(
-            status_code=500,
-            detail="An error occurred while processing your request with the LLM.",
-        )
-
-
 @app.post("/rag")
 def rag_endpoint(request: LLMQuery):
     return get_rag_response(request.query)
